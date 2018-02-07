@@ -55,23 +55,23 @@ import Text.XML.HaXml.XmlContent
 -- | A canonical tradeable element, physical or financial
 data Tradeable = Physical  Commodity Unit Location (Maybe Duration) (Maybe Portfolio)
                | Financial Currency CashFlowType (Maybe Portfolio)
-  deriving (Eq, Show)
+  deriving (Eq, Ord, Show)
 
 -- | A duration is a span of time, measured in seconds.
 --
-newtype Duration  = Duration  Int {- in sec -} deriving (Eq, Show, Num)
+newtype Duration  = Duration  Int {- in sec -} deriving (Eq, Ord, Show, Num)
 -- | Commodity, e.g. Gas, Electricity
-newtype Commodity = Commodity String           deriving (Eq, Show)
+newtype Commodity = Commodity String           deriving (Eq, Ord, Show)
 -- | Unit, e.g. tonnes, MWh
-newtype Unit      = Unit      String           deriving (Eq, Show)
+newtype Unit      = Unit      String           deriving (Eq, Ord, Show)
 -- | Location, e.g. UK, EU
-newtype Location  = Location  String           deriving (Eq, Show)
+newtype Location  = Location  String           deriving (Eq, Ord, Show)
 -- | Currency, e.g. EUR, USD, GBP
-newtype Currency  = Currency  String           deriving (Eq, Show)
+newtype Currency  = Currency  String           deriving (Eq, Ord, Show)
 -- | Cashflow type, e.g. cash, premium
-newtype CashFlowType = CashFlowType String     deriving (Eq, Show)
+newtype CashFlowType = CashFlowType String     deriving (Eq, Ord, Show)
 -- | Portfolio name
-newtype Portfolio = Portfolio String           deriving (Eq, Show)
+newtype Portfolio = Portfolio String           deriving (Eq, Ord, Show)
 
 -- | Scaling factor (used to scale the 'One' contract)
 type ScaleFactor  = Double

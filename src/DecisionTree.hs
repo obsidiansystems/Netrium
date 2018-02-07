@@ -35,7 +35,7 @@ data DecisionStep x = Done
   deriving Functor
 
 data Party = FirstParty | Counterparty | ThirdParty PartyName
-  deriving (Eq, Show)
+  deriving (Eq, Ord, Show)
 
 -- See also data TradeDir below
 
